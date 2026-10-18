@@ -1,0 +1,464 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>FSC Practice Range</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="description" content="Free practice quizzes for the California Firearm Safety Certificate (FSC) test, written from the CA DOJ study guide.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=Public+Sans:ital,wght@0,400;0,600;0,700;1,400&display=swap">
+<style>
+/* Layout: header band, then a two-column grid (left ad rail + study column), leaderboard ad, footer.
+   Range-signage feel: slate neutrals with one safety-orange accent (the color of a dummy round). */
+:root{
+  --bg:#f3f4f2; --surface:#ffffff; --ink:#1d2421; --muted:#5b6661; --line:#d8ddd9;
+  --accent:#d9480f; --accent-ink:#ffffff; --accent-soft:#fdeee6;
+  --good:#2b7a4b; --good-soft:#e6f3ea; --bad:#b42318; --bad-soft:#fbeae8;
+  --band:#26302c; --band-ink:#eef1ef;
+  --display:"Barlow Condensed","Arial Narrow",Arial,sans-serif;
+  --body:"Public Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --radius:6px;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#141917; --surface:#1d2421; --ink:#e7ebe8; --muted:#9aa6a0; --line:#323c37;
+  --accent:#ff7a3d; --accent-ink:#1a0f08; --accent-soft:#3a2216;
+  --good:#5cc489; --good-soft:#18301f; --bad:#f2786d; --bad-soft:#3a1c19;
+  --band:#0e1311; --band-ink:#e7ebe8; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#141917; --surface:#1d2421; --ink:#e7ebe8; --muted:#9aa6a0; --line:#323c37;
+  --accent:#ff7a3d; --accent-ink:#1a0f08; --accent-soft:#3a2216;
+  --good:#5cc489; --good-soft:#18301f; --bad:#f2786d; --bad-soft:#3a1c19;
+  --band:#0e1311; --band-ink:#e7ebe8; color-scheme:dark}
+
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font-family:var(--body);font-size:16px;line-height:1.55}
+.wrap{max-width:1180px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+h1,h2,h3{font-family:var(--display);line-height:1.05;text-wrap:balance;margin:0;letter-spacing:.01em}
+a{color:var(--accent)}
+button{font:inherit;cursor:pointer}
+:focus-visible{outline:3px solid var(--accent);outline-offset:2px}
+
+/* Header */
+.top{background:var(--band);color:var(--band-ink)}
+.top .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;padding-block:14px;flex-wrap:wrap}
+.brand{display:flex;align-items:center;gap:10px;color:inherit;text-decoration:none;background:none;border:0;padding:0}
+.brand-mark{width:30px;height:30px;border-radius:50%;background:var(--accent);display:grid;place-items:center}
+.brand-mark::after{content:"";width:12px;height:12px;border-radius:50%;border:3px solid var(--band)}
+.brand h1{font-size:26px;font-weight:800;text-transform:uppercase;letter-spacing:.04em}
+.top small{font-size:13px;opacity:.8}
+
+/* Grid with ad rail */
+.layout{display:grid;grid-template-columns:180px minmax(0,1fr);gap:28px;padding-block:28px}
+.rail{position:sticky;top:20px;align-self:start}
+.ad{display:flex;flex-direction:column;gap:4px;align-items:center}
+.ad-label{font-size:10px;text-transform:uppercase;letter-spacing:.12em;color:var(--muted)}
+.ad-slot{width:100%;border:1px dashed var(--line);border-radius:4px;display:grid;place-items:center;color:var(--muted);font-size:12px;text-align:center;background:var(--surface);overflow:hidden}
+.ad-slot img{display:block;width:100%;height:100%;object-fit:cover}
+.ad-slot a{display:block;width:100%;height:100%}
+.ad-left .ad-slot{aspect-ratio:160/600;max-width:160px}
+.ad-bottom{padding-block:8px 24px}
+.ad-bottom .ad-slot{aspect-ratio:728/90;max-width:728px}
+main{min-width:0}
+
+/* Notice gate */
+.notice{background:var(--surface);border:1px solid var(--line);border-top:6px solid var(--accent);border-radius:var(--radius);padding:28px;max-width:720px}
+.notice h2{font-size:34px;font-weight:800;text-transform:uppercase;margin-bottom:12px}
+.notice p{margin:0 0 12px;max-width:65ch}
+.notice ul{margin:0 0 16px;padding-left:20px;display:grid;gap:6px}
+.btn{display:inline-flex;align-items:center;gap:8px;border:2px solid var(--accent);background:var(--accent);color:var(--accent-ink);padding:10px 18px;border-radius:var(--radius);font-weight:700}
+.btn:hover{filter:brightness(1.07)}
+.btn.ghost{background:transparent;color:var(--ink);border-color:var(--line)}
+.btn.ghost:hover{border-color:var(--accent)}
+.btn:disabled{opacity:.45;cursor:not-allowed;filter:none}
+
+/* Home */
+.intro{display:flex;flex-direction:column;gap:6px;margin-bottom:22px}
+.intro h2{font-size:clamp(32px,5vw,46px);font-weight:800;text-transform:uppercase}
+.intro p{margin:0;color:var(--muted);max-width:65ch}
+.facts{display:flex;flex-wrap:wrap;gap:8px;margin:14px 0 26px}
+.fact{border:1px solid var(--line);background:var(--surface);border-radius:999px;padding:4px 12px;font-size:13px;font-variant-numeric:tabular-nums}
+.fact b{color:var(--accent)}
+.section-h{font-size:14px;text-transform:uppercase;letter-spacing:.12em;color:var(--muted);font-family:var(--body);font-weight:700;margin:0 0 10px}
+.chapters{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:12px;margin-bottom:30px}
+.ch{display:flex;flex-direction:column;gap:6px;text-align:left;background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:16px;color:var(--ink)}
+.ch:hover{border-color:var(--accent)}
+.ch .num{font-family:var(--display);font-weight:700;font-size:15px;color:var(--accent);text-transform:uppercase;letter-spacing:.08em}
+.ch h3{font-size:24px;font-weight:700}
+.ch .meta{font-size:13px;color:var(--muted);margin-top:auto}
+.exam-card{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:16px;align-items:center;background:var(--band);color:var(--band-ink);border-radius:var(--radius);padding:22px}
+.exam-card h3{font-size:30px;font-weight:800;text-transform:uppercase}
+.exam-card p{margin:4px 0 0;opacity:.85;max-width:60ch}
+
+/* Quiz */
+.qhead{display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap;margin-bottom:10px}
+.qhead h2{font-size:28px;font-weight:800;text-transform:uppercase}
+.count{font-variant-numeric:tabular-nums;color:var(--muted);font-size:14px}
+.bar{height:6px;background:var(--line);border-radius:3px;overflow:hidden;margin-bottom:22px}
+.bar i{display:block;height:100%;background:var(--accent);transition:width .25s}
+.qcard{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:24px}
+.qtype{font-size:12px;text-transform:uppercase;letter-spacing:.12em;color:var(--muted);font-weight:700}
+.qtext{font-size:20px;font-weight:600;margin:6px 0 18px;max-width:65ch}
+.opts{display:grid;gap:8px}
+.opts.tf{grid-template-columns:1fr 1fr}
+.opt{display:flex;gap:12px;align-items:flex-start;text-align:left;border:2px solid var(--line);background:var(--bg);color:var(--ink);border-radius:var(--radius);padding:12px 14px}
+.opt:hover:not(:disabled){border-color:var(--accent)}
+.opt .key{font-family:var(--display);font-weight:700;font-size:18px;min-width:20px;color:var(--muted)}
+.opt.sel{border-color:var(--accent);background:var(--accent-soft)}
+.opt.right{border-color:var(--good);background:var(--good-soft)}
+.opt.wrong{border-color:var(--bad);background:var(--bad-soft)}
+.opt:disabled{cursor:default}
+.feedback{margin-top:16px;padding:14px;border-radius:var(--radius);border-left:5px solid var(--good);background:var(--good-soft)}
+.feedback.no{border-left-color:var(--bad);background:var(--bad-soft)}
+.feedback b{display:block;margin-bottom:2px}
+.page-ref{font-size:13px;color:var(--muted)}
+.qnav{display:flex;justify-content:space-between;gap:10px;margin-top:18px;flex-wrap:wrap}
+
+/* Results */
+.score{display:grid;grid-template-columns:auto minmax(0,1fr);gap:22px;align-items:center;background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:24px;margin-bottom:18px}
+.dial{width:120px;height:120px;border-radius:50%;display:grid;place-items:center;font-family:var(--display);font-weight:800;font-size:38px;font-variant-numeric:tabular-nums}
+.verdict{font-family:var(--display);font-weight:800;font-size:30px;text-transform:uppercase}
+.verdict.pass{color:var(--good)} .verdict.fail{color:var(--bad)}
+.score p{margin:4px 0 0;color:var(--muted)}
+.sections{display:grid;gap:10px;margin-bottom:22px}
+.secrow{display:grid;grid-template-columns:minmax(0,1fr) 150px 64px;gap:12px;align-items:center;background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:12px 14px}
+.secrow .nm{font-weight:600}
+.secrow .meter{height:8px;background:var(--line);border-radius:4px;overflow:hidden}
+.secrow .meter i{display:block;height:100%}
+.secrow .pct{font-variant-numeric:tabular-nums;text-align:right;font-weight:700}
+.tag{display:inline-block;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;padding:2px 8px;border-radius:999px;margin-left:6px;vertical-align:middle}
+.tag.good{background:var(--good-soft);color:var(--good)} .tag.bad{background:var(--bad-soft);color:var(--bad)}
+.callouts{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:22px}
+.callout{border-radius:var(--radius);padding:16px;border:1px solid var(--line);background:var(--surface)}
+.callout h3{font-size:20px;text-transform:uppercase;margin-bottom:4px}
+.callout.good h3{color:var(--good)} .callout.bad h3{color:var(--bad)}
+.callout p{margin:0}
+.missed{display:grid;gap:10px;margin-bottom:22px}
+.miss{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:14px 16px}
+.miss .q{font-weight:600;margin-bottom:6px}
+.miss .ans{font-size:14px}
+.miss .ans span{color:var(--bad)} .miss .ans strong{color:var(--good)}
+.miss .ex{font-size:14px;color:var(--muted);margin-top:4px}
+.actions{display:flex;gap:10px;flex-wrap:wrap}
+
+/* Footer */
+footer{border-top:1px solid var(--line);color:var(--muted);font-size:13px}
+footer .wrap{padding-block:22px;display:grid;gap:8px}
+footer p{margin:0;max-width:90ch}
+
+@media (max-width:860px){
+  .layout{grid-template-columns:minmax(0,1fr)}
+  .rail{position:static;order:2}
+  .ad-left .ad-slot{aspect-ratio:300/250;max-width:300px}
+}
+@media (max-width:560px){
+  .opts.tf{grid-template-columns:1fr}
+  .callouts{grid-template-columns:1fr}
+  .exam-card{grid-template-columns:1fr}
+  .score{grid-template-columns:1fr;justify-items:start}
+  .secrow{grid-template-columns:minmax(0,1fr) 54px}
+  .secrow .meter{grid-column:1 / -1;grid-row:2}
+  .qcard,.notice{padding:18px}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+
+<header class="top">
+  <div class="wrap">
+    <button class="brand" id="homeLink" type="button" aria-label="FSC Practice Range home">
+      <span class="brand-mark" aria-hidden="true"></span>
+      <h1>FSC Practice Range</h1>
+    </button>
+    <small>Unofficial study aid · California Firearm Safety Certificate</small>
+  </div>
+</header>
+
+<div class="wrap layout">
+  <!-- LEFT AD RAIL (160x600 skyscraper; becomes 300x250 below the content on phones) -->
+  <aside class="rail" aria-label="Advertisement">
+    <div class="ad ad-left">
+      <span class="ad-label">Advertisement</span>
+      <div class="ad-slot" id="adLeft"></div>
+    </div>
+  </aside>
+
+  <main id="app" aria-live="polite"></main>
+</div>
+
+<!-- BOTTOM AD (728x90 leaderboard) -->
+<div class="wrap ad-bottom">
+  <div class="ad">
+    <span class="ad-label">Advertisement</span>
+    <div class="ad-slot" id="adBottom"></div>
+  </div>
+</div>
+
+<footer>
+  <div class="wrap">
+    <p><strong>Supplemental resource only.</strong> This site is not affiliated with, endorsed by, or operated by the California Department of Justice. Questions are original practice items written from the public <a href="https://oag.ca.gov/firearms/fsc" target="_blank" rel="noopener">DOJ Firearm Safety Certificate Study Guide</a> (2025 edition) and are not actual test questions. Laws change; the DOJ study guide and <a href="https://oag.ca.gov/firearms" target="_blank" rel="noopener">oag.ca.gov/firearms</a> are the official sources. This is not legal advice.</p>
+    <p>No accounts, no sign-up, and no answers or scores are saved or sent anywhere. Your results disappear when you close the page.</p>
+    <p>Question bank last checked against the study guide: October 2026.</p>
+  </div>
+</footer>
+
+<script src="q1.js"></script>
+<script src="q2.js"></script>
+<script src="q3.js"></script>
+<script src="q4.js"></script>
+<script src="q5.js"></script>
+<script src="q6.js"></script>
+<script src="exams.js"></script>
+<script>
+/* ============================================================
+   AD CONFIGURATION — edit these lists to place your sponsors.
+   Each entry: { img: "image URL", href: "click-through URL", alt: "description" }
+   One entry is picked at random on each page load. Leave a list empty to show a placeholder.
+   To use an ad network (e.g. Google AdSense) instead, paste its snippet inside
+   #adLeft and #adBottom in the HTML above and empty these lists.
+   Recommended sizes: left = 160x600 (desktop) / 300x250 (phone); bottom = 728x90.
+   ============================================================ */
+const ADS = {
+  left:   [],
+  bottom: []
+};
+
+const CHAPTERS = {
+  1:{title:"Firearm Safety Rules",sub:"Six basic rules, extra safety points, plus the Introduction",pages:"pp. 1–6"},
+  2:{title:"Firearms and Children",sub:"Owner responsibility and the Rules for Kids",pages:"pp. 7–9"},
+  3:{title:"Operation and Safe Handling",sub:"Revolvers, pistols, ammunition, range, malfunctions",pages:"pp. 10–25"},
+  4:{title:"Firearm Ownership",sub:"Cleaning, safety devices, storage, childproofing",pages:"pp. 26–29"},
+  5:{title:"Prohibited Transfers",sub:"Straw purchases and private-party transfers",pages:"p. 30"},
+  6:{title:"Firearms Laws",sub:"Sales, carry, self-defense, storage, prohibitions",pages:"pp. 31–40"}
+};
+const QUIZ_LEN = 20, PASS = 0.75, GUIDE_URL = "https://oag.ca.gov/firearms/fsc";
+
+const app = document.getElementById("app");
+let state = null;     // current quiz
+let acknowledged = false;
+
+/* ---------- helpers ---------- */
+const esc = s => String(s).replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+function shuffle(a){ a = a.slice(); for(let i=a.length-1;i>0;i--){ const j=Math.floor(Math.random()*(i+1)); [a[i],a[j]]=[a[j],a[i]]; } return a; }
+function prep(q, chapter){
+  const item = {...q, c: q.c || chapter};
+  if(q.t === "mc"){
+    const idx = q.o.map((_,i)=>i);
+    const order = q.k ? idx : shuffle(idx);
+    item.o = order.map(i=>q.o[i]);
+    item.a = order.indexOf(q.a);
+  } else {
+    item.o = ["True","False"];
+    item.a = q.a ? 0 : 1;
+  }
+  return item;
+}
+function pct(n,d){ return d ? Math.round(n/d*100) : 0; }
+
+function renderAd(id, list, label){
+  const el = document.getElementById(id);
+  if(el.dataset.filled) return;
+  if(list.length){
+    const ad = list[Math.floor(Math.random()*list.length)];
+    el.innerHTML = `<a href="${esc(ad.href)}" target="_blank" rel="sponsored noopener"><img src="${esc(ad.img)}" alt="${esc(ad.alt||"Sponsor")}"></a>`;
+    el.style.borderStyle = "none";
+  } else {
+    el.textContent = label;
+  }
+  el.dataset.filled = "1";
+}
+
+/* ---------- screens ---------- */
+function showNotice(){
+  app.innerHTML = `
+  <section class="notice">
+    <h2>Before you start</h2>
+    <p>FSC Practice Range is a <strong>supplemental study resource</strong>. It does not replace the official California Department of Justice Firearm Safety Certificate Study Guide, and it is not affiliated with or endorsed by the DOJ.</p>
+    <ul>
+      <li>Every question is an original practice item written from the 2025 DOJ study guide. None are actual test questions.</li>
+      <li>California firearm laws change. Always confirm details in the <a href="${GUIDE_URL}" target="_blank" rel="noopener">official study guide</a>.</li>
+      <li>This site is not legal advice.</li>
+      <li>No personal information is collected. Your answers and scores are never saved or sent.</li>
+    </ul>
+    <button class="btn" id="ack" type="button">I understand, let's practice</button>
+  </section>`;
+  document.getElementById("ack").onclick = () => { acknowledged = true; showHome(); };
+}
+
+function showHome(){
+  state = null;
+  const cards = Object.entries(CHAPTERS).map(([n,c]) => `
+    <button class="ch" type="button" data-ch="${n}">
+      <span class="num">Chapter ${n}</span>
+      <h3>${esc(c.title)}</h3>
+      <span>${esc(c.sub)}</span>
+      <span class="meta">${QUIZ_LEN} random questions from ${FSC_BANK[n].length} · Study guide ${c.pages}</span>
+    </button>`).join("");
+  app.innerHTML = `
+    <div class="intro">
+      <h2>Practice for the California FSC test</h2>
+      <p>Take a chapter quiz to drill one section, then try a full-length final exam. Each chapter quiz pulls ${QUIZ_LEN} questions at random from a bank of 60, so you will see a different mix every time.</p>
+    </div>
+    <div class="facts" aria-label="About the real test">
+      <span class="fact">Real test: <b>30</b> questions</span>
+      <span class="fact"><b>10</b> true/false + <b>20</b> multiple choice</span>
+      <span class="fact">Pass: <b>23</b> correct (75%)</span>
+      <span class="fact">FSC valid <b>5</b> years · fee <b>$25</b></span>
+    </div>
+    <h2 class="section-h">Chapter quizzes</h2>
+    <div class="chapters">${cards}</div>
+    <h2 class="section-h">Cumulative final exam</h2>
+    <div class="exam-card">
+      <div>
+        <h3>Final Exam</h3>
+        <p>30 questions across all six chapters, in the same 10 true/false + 20 multiple choice format as the DOJ test. You get one of three exam versions at random. Answers are revealed at the end, with a breakdown of your strongest chapter and the one to review.</p>
+      </div>
+      <button class="btn" id="startExam" type="button">Start final exam</button>
+    </div>`;
+  app.querySelectorAll(".ch").forEach(b => b.onclick = () => startChapter(+b.dataset.ch));
+  document.getElementById("startExam").onclick = startExam;
+  window.scrollTo({top:0});
+}
+
+function startChapter(n){
+  const qs = shuffle(FSC_BANK[n]).slice(0, QUIZ_LEN).map(q => prep(q, n));
+  state = {mode:"chapter", chapter:n, title:`Chapter ${n}: ${CHAPTERS[n].title}`, qs, i:0, answers:Array(qs.length).fill(null), locked:Array(qs.length).fill(false)};
+  showQuestion();
+}
+function startExam(){
+  const v = Math.floor(Math.random()*FSC_EXAMS.length);
+  const tf = FSC_EXAMS[v].filter(q=>q.t==="tf"), mc = FSC_EXAMS[v].filter(q=>q.t==="mc");
+  // Like the DOJ test: true/false section first, then multiple choice. Order shuffled within each.
+  const qs = [...shuffle(tf), ...shuffle(mc)].map(q => prep(q, q.c));
+  state = {mode:"exam", version:"ABC"[v], title:`Final Exam · Version ${"ABC"[v]}`, qs, i:0, answers:Array(qs.length).fill(null), locked:Array(qs.length).fill(false)};
+  showQuestion();
+}
+
+function showQuestion(){
+  const s = state, q = s.qs[s.i], n = s.qs.length;
+  const practice = s.mode === "chapter";
+  const chosen = s.answers[s.i], locked = s.locked[s.i];
+  const keys = q.t === "tf" ? ["T","F"] : ["A","B","C","D","E"];
+  const opts = q.o.map((o,j) => {
+    let cls = "opt";
+    if(locked){ if(j===q.a) cls += " right"; else if(j===chosen) cls += " wrong"; }
+    else if(j===chosen) cls += " sel";
+    return `<button class="${cls}" type="button" data-j="${j}" ${locked?"disabled":""} aria-pressed="${j===chosen}"><span class="key">${keys[j]}</span><span>${esc(o)}</span></button>`;
+  }).join("");
+  let fb = "";
+  if(locked){
+    const ok = chosen === q.a;
+    fb = `<div class="feedback ${ok?"":"no"}"><b>${ok?"Correct.":"Not quite. Correct answer: "+esc(q.o[q.a])}</b>${esc(q.e)} <span class="page-ref">Study guide p. ${q.p}</span></div>`;
+  }
+  const last = s.i === n-1;
+  let primary;
+  if(practice && !locked) primary = `<button class="btn" id="check" type="button" ${chosen===null?"disabled":""}>Check answer</button>`;
+  else primary = `<button class="btn" id="next" type="button" ${chosen===null?"disabled":""}>${last ? (practice?"See results":"Finish exam") : "Next question"}</button>`;
+  const section = s.mode==="exam" ? (q.t==="tf" ? "Part 1 · True or false" : "Part 2 · Multiple choice") : (q.t==="tf" ? "True or false" : "Multiple choice");
+
+  app.innerHTML = `
+    <div class="qhead"><h2>${esc(s.title)}</h2><span class="count">Question ${s.i+1} of ${n}</span></div>
+    <div class="bar" role="progressbar" aria-valuemin="0" aria-valuemax="${n}" aria-valuenow="${s.i+1}"><i style="width:${(s.i+1)/n*100}%"></i></div>
+    <article class="qcard">
+      <div class="qtype">${section}${s.mode==="exam" ? " · Chapter "+q.c : ""}</div>
+      <p class="qtext">${esc(q.q)}</p>
+      <div class="opts ${q.t==="tf"?"tf":""}">${opts}</div>
+      ${fb}
+    </article>
+    <div class="qnav">
+      <button class="btn ghost" id="quit" type="button">Quit to menu</button>
+      <span style="display:flex;gap:10px;flex-wrap:wrap">
+        ${s.mode==="exam" && s.i>0 ? `<button class="btn ghost" id="prev" type="button">Previous</button>` : ""}
+        ${primary}
+      </span>
+    </div>`;
+
+  app.querySelectorAll(".opt").forEach(b => b.onclick = () => { s.answers[s.i] = +b.dataset.j; showQuestion(); });
+  const check = document.getElementById("check");
+  if(check) check.onclick = () => { s.locked[s.i] = true; showQuestion(); };
+  const next = document.getElementById("next");
+  if(next) next.onclick = () => { if(last) showResults(); else { s.i++; showQuestion(); } };
+  const prev = document.getElementById("prev");
+  if(prev) prev.onclick = () => { s.i--; showQuestion(); };
+  document.getElementById("quit").onclick = confirmQuit;
+}
+
+function confirmQuit(){
+  const nav = app.querySelector(".qnav");
+  nav.innerHTML = `<span>Leave this ${state.mode==="exam"?"exam":"quiz"}? Your answers will be lost.</span>
+    <span style="display:flex;gap:10px"><button class="btn ghost" id="stay" type="button">Keep going</button><button class="btn" id="leave" type="button">Leave</button></span>`;
+  document.getElementById("stay").onclick = showQuestion;
+  document.getElementById("leave").onclick = showHome;
+}
+
+function showResults(){
+  const s = state, n = s.qs.length;
+  const right = s.qs.filter((q,i) => s.answers[i] === q.a).length;
+  const p = right/n, passed = p >= PASS;
+  const need = Math.ceil(n*PASS);
+  const dialColor = passed ? "var(--good)" : "var(--bad)";
+
+  // Per-chapter breakdown
+  const by = {};
+  s.qs.forEach((q,i) => { const c=q.c; by[c] = by[c] || {r:0,t:0}; by[c].t++; if(s.answers[i]===q.a) by[c].r++; });
+  const rows = Object.keys(by).sort().map(c => {
+    const v = by[c], cp = pct(v.r,v.t), ok = v.r/v.t >= PASS;
+    return `<div class="secrow"><span class="nm">Ch. ${c} · ${esc(CHAPTERS[c].title)}<span class="tag ${ok?"good":"bad"}">${ok?"Solid":"Review"}</span></span>
+      <span class="meter"><i style="width:${cp}%;background:${ok?"var(--good)":"var(--bad)"}"></i></span>
+      <span class="pct">${v.r}/${v.t}</span></div>`;
+  }).join("");
+
+  let callouts = "";
+  if(s.mode === "exam"){
+    const list = Object.keys(by).map(c => ({c, r:by[c].r/by[c].t}));
+    const best = list.slice().sort((a,b)=>b.r-a.r)[0];
+    const worst = list.slice().sort((a,b)=>a.r-b.r)[0];
+    const reviewText = worst.r >= 1
+      ? `You answered every question correctly. Skim the full guide once more before test day.`
+      : `Chapter ${worst.c}: ${esc(CHAPTERS[worst.c].title)} (${pct(by[worst.c].r,by[worst.c].t)}%). Reread study guide ${CHAPTERS[worst.c].pages}, then take the Chapter ${worst.c} quiz.`;
+    callouts = `<div class="callouts">
+      <div class="callout good"><h3>You did well</h3><p>Chapter ${best.c}: ${esc(CHAPTERS[best.c].title)} (${pct(by[best.c].r,by[best.c].t)}%).</p></div>
+      <div class="callout bad"><h3>Review next</h3><p>${reviewText}</p></div>
+    </div>`;
+  } else {
+    callouts = `<div class="callouts">
+      <div class="callout ${passed?"good":"bad"}"><h3>${passed?"Section ready":"Review this section"}</h3>
+      <p>${passed ? `You are at or above the 75% passing mark for Chapter ${s.chapter}. Retake it for a fresh set of ${QUIZ_LEN}, or move on.` : `Reread study guide ${CHAPTERS[s.chapter].pages} and focus on the questions below, then retake for a fresh set.`}</p></div>
+      <div class="callout"><h3>Next step</h3><p>When every chapter is above 75%, take the cumulative final exam.</p></div>
+    </div>`;
+  }
+
+  const missed = s.qs.map((q,i)=>({q,a:s.answers[i]})).filter(x => x.a !== x.q.a);
+  const missedHtml = missed.length ? missed.map(({q,a}) => `
+    <div class="miss"><div class="q">${esc(q.q)}</div>
+      <div class="ans">Your answer: <span>${esc(q.o[a])}</span> · Correct: <strong>${esc(q.o[q.a])}</strong></div>
+      <div class="ex">${esc(q.e)} Study guide p. ${q.p}${s.mode==="exam"?` · Chapter ${q.c}`:""}</div></div>`).join("")
+    : `<div class="miss">No missed questions. Nice work.</div>`;
+
+  app.innerHTML = `
+    <div class="qhead"><h2>${esc(s.title)} · Results</h2></div>
+    <section class="score">
+      <div class="dial" style="background:conic-gradient(${dialColor} ${p*360}deg, var(--line) 0)"><span style="background:var(--surface);width:92px;height:92px;border-radius:50%;display:grid;place-items:center">${pct(right,n)}%</span></div>
+      <div>
+        <div class="verdict ${passed?"pass":"fail"}">${passed?"Passing score":"Below passing"}</div>
+        <p>${right} of ${n} correct. You need ${need} of ${n} (75%) to pass${s.mode==="exam"?", the same standard as the DOJ test (23 of 30)":""}.</p>
+      </div>
+    </section>
+    ${callouts}
+    <h3 class="section-h">${s.mode==="exam" ? "Score by chapter" : "Your score"}</h3>
+    <div class="sections">${rows}</div>
+    <h3 class="section-h">Questions to review (${missed.length})</h3>
+    <div class="missed">${missedHtml}</div>
+    <div class="actions">
+      ${s.mode==="exam" ? `<button class="btn" id="again" type="button">Take another exam</button>` : `<button class="btn" id="again" type="button">Retake with new questions</button>`}
+      <button class="btn ghost" id="menu" type="button">Back to menu</button>
+      <a class="btn ghost" href="${GUIDE_URL}" target="_blank" rel="noopener">Open the official study guide</a>
+    </div>`;
+  document.getElementById("again").onclick = () => s.mode==="exam" ? startExam() : startChapter(s.chapter);
+  document.getElementById("menu").onclick = showHome;
+  window.scrollTo({top:0});
+}
+
+document.getElementById("homeLink").onclick = () => acknowledged ? showHome() : showNotice();
+renderAd("adLeft", ADS.left, "Ad space 160 × 600");
+renderAd("adBottom", ADS.bottom, "Ad space 728 × 90");
+showNotice();
+</script>
+
+</body></html>
